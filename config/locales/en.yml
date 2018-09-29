@@ -1,0 +1,38 @@
+en:
+  base_title: "Exam Scheduling"
+
+  helpers:
+    label:
+      user:
+
+  layouts:
+    header:
+      english: "English"
+      viet: "Vietnamese"
+      newuser: "Create new user"
+      users: "All users"
+
+  shared:
+    error_messages:
+      form: "Form contains "
+      error: " error(s)."
+
+  users:
+    index:
+      edit: "Edit"
+      delete: "Delete"
+      sure: "Are you sure to delete this user?"
+    edit:
+      edit: "Edit user"
+      save: "Save"
+    form:
+      confirm: "Confirm password"
+    new:
+      create: "Create new user"
+    create:
+      success: "Create new user success"
+      failed: "Failed, check information again"
+
+  static_pages:
+    home:
+      welcome: "Welcome to this site: Exam Schedule"

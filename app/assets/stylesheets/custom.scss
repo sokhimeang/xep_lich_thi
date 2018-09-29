@@ -1,0 +1,17 @@
+body, html {
+  height: 100%;
+}
+.view {
+  /* The image used */
+  background-image: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,32,0,0.7)),
+    url("maxresdefault.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+  // background: -moz-linear-gradient(45deg, rgba(42, 27, 161, 0.7), rgba(29, 210, 177, 0.7) 100%);
+}
+.m-place {
+ padding: 15px;
+ border-radius: 5px;
+}

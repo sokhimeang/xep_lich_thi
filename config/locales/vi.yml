@@ -1,0 +1,43 @@
+vi:
+  base_title: "Sắp xếp lịch thi"
+
+  helpers:
+    label:
+      user:
+        code: "Mã số user"
+        name: "Họ Tên"
+        email: "Email"
+        pasword: "Mật khẩu"
+        password_confirmation: "Xác nhận mật khẩu"
+
+  layouts:
+    header:
+      english: "Tiếng Anh"
+      viet: "Tiếng Việt"
+      newuser: "Tạo user mới"
+      users: "Xem tất cả users"
+
+  shared:
+    error_messages:
+      form: "Form có "
+      error: " lỗi."
+
+  users:
+    index:
+      edit: "Chỉnh sửa"
+      delete: "Xóa"
+      sure: "Bạn có chắc chắn muốn xóa user này không?"
+    edit:
+      edit: "Chỉnh sửa user"
+      save: "Lưu"
+    form:
+      confirm: "Xác nhận password"
+    new:
+      create: "Tạo user mới"
+    create:
+      success: "Tạo user mới thành công"
+      failed: "Failed, xem lại thông tin đăng ký"
+
+  static_pages:
+    home:
+      welcome: "Xin chào các bạn"
