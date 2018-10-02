@@ -1,2 +1,10 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<%= image_tag @user.image.thumb.url %>
+<br>
+<% @subjects.each do |subject| %>
+  <div>
+    <%= subject.id %>
+    | <%= subject.name %>
+    | <%= link_to "Delete", user_subject_url, method: :delete,
+      data: { confirm: t("sure") } %>
+  </div>
+<% end %>

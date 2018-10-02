@@ -1,3 +1,5 @@
+require "action_cable/engine"
+require "sprockets/railtie"
 require_relative 'boot'
 
 require 'rails/all'

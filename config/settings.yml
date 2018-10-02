@@ -10,3 +10,9 @@ user:
     length: 6
   account:
     per_page: 20
+
+subject:
+  per_page: 20
+  exam:
+    min_during: 45
+    max_during: 120
