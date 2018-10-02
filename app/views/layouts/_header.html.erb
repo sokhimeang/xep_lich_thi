@@ -1,5 +1,42 @@
+<div class="row">
+  <div class="col-md-8 mb-2 round-mn">
+    <ul class="nav">
+      <li class="nav-item my-bg">
+        <%= link_to t(".home"), root_url, class: "nav-link my-li" %>
+      </li>
+      <li class="nav-item my-bg">
+        <%= link_to t(".help"), "#", class: "nav-link my-li" %>
+      </li>
+      <li class="nav-item my-bg">
+        <%= link_to t(".contact"), contact_url, class: "nav-link my-li" %>
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-md-4 mb-2">
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <%= link_to t(".login"), "#", class: "nav-link bg-dark text-white" %>
+      </li>
+      <li class="nav-item dropdown">
+        <%=  link_to t(".account"), "#", class: "nav-link dropdown-toggle
+        bg-primary text-white", data: { toggle: "dropdown"} %>
+        <div class="dropdown-menu dropdown-menu-right bg-success">
+          <%= link_to t(".profile"), "#", class: "dropdown-item bg-success" %>
+          <%= link_to t(".settings"), "#", class: "dropdown-item bg-success" %>
+          <div class="dropdown-divider"></div>
+          <%= link_to t(".logout"), "#", class: "dropdown-item bg-warning text-dark" %>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
 <%= link_to t(".english"), locale: "en" %>
 | <%= link_to t(".viet"), locale: "vi" %>
 <br>
 <%= link_to t(".newuser"), new_user_path %>
 | <%= link_to t(".users"), users_path %>
+| <%= link_to t(".newsubject"), new_subject_path %>
+| <%= link_to t(".subjects"), subjects_path %>
+| <%= link_to t(".addsubject"), new_user_subject_path %>

@@ -9,9 +9,10 @@ class UsersController < ApplicationController
     @user = User.new user_params
 
     if @user.save
-      flash[:info] = t ".create"
+      flash[:info] = t "create_success"
       redirect_to @user
     else
+      flash[:danger] = t "create_failed"
       render :new
     end
   end
@@ -19,25 +20,41 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def update
+    if @user.update user_params
+      flash[:success] = t "updated"
+      redirect_to users_path
+    else
+      render :edit
+    end
+  end
+
   def show
+    @subjects = @user.subjects
   end
 
   def index
-    @users = User.order_by_code.paginate page: params[:page],
-      per_page: Settings.user.account.per_page
+    @users = if params[:term]
+      User.where('code LIKE ? OR name LIKE ?', "%#{params[:term]}%",
+        "%#{params[:term]}%").paginate page: params[:page],
+        per_page: Settings.user.account.per_page
+    else
+      User.order_by_code.paginate page: params[:page],
+        per_page: Settings.user.account.per_page
+    end
   end
 
   def destroy
     @user.destroy
-    flash[:success] = t "delete"
-    redirect_to users_url
+    flash[:success] = t "deleted"
+    redirect_to users_path
   end
 
   private
 
   def user_params
     params.require(:user).permit :code, :name, :email,
-      :password, :password_confirmation
+      :password, :password_confirmation, :image, :term
   end
 
   def find_user
