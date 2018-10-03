@@ -1,3 +1,4 @@
+<% provide :title, t(".register") %>
 <%= form_for @user_subject do |f| %>
   <%= f.label :user_id %>
   <%= f.text_field :user_id, class: "form-control" %>
@@ -5,5 +6,5 @@
   <%= f.label :subject_id %>
   <%= f.text_field :subject_id, class: "form-control" %>
 
-  <br><%= f.submit t("register"), class: "btn btn-primary" %>
+  <br><%= f.submit t(".btnregister"), class: "btn btn-primary" %>
 <% end %>

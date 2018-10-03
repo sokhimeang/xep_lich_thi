@@ -10,7 +10,7 @@ en:
   create_failed: "Failed, check information again"
   deleted: "Deleted success"
   updated: "Updated success"
-  register: "Submit register"
+  search: "Search"
 
   helpers:
     label:
@@ -24,7 +24,13 @@ en:
       users: "All users"
       newsubject: "Create new subject"
       subjects: "All subjects"
-      addsubject: "Register subject"
+      addusersubject: "Register subject for student"
+      register_subject: "Regitster subject"
+
+  user_subjects:
+    new:
+      register: "Register subject for student"
+      btnregister: "Register"
 
   shared:
     error_messages:
@@ -32,6 +38,11 @@ en:
       error: " error(s)."
 
   users:
+    register_subjects:
+      register: "Register subject"
+      subjectcode: "Subject code"
+    index:
+      users: "Users list"
     edit:
       edit: "Edit user"
     form:

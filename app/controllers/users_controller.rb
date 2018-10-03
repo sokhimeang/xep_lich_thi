@@ -1,6 +1,31 @@
 class UsersController < ApplicationController
   before_action :find_user, only: %i(show edit update destroy)
 
+  def register_subjects
+  end
+
+  def do_register_subjects
+    @user = User.find_by id: 1
+    @subjects = Subject.all
+    ktra = false
+
+    @subjects.each do |subject|
+      if (subject.code == params[:term])
+        user_id = @user.id
+        subject_id = subject.id
+        @user_subject = UserSubject.new(user_id: user_id,
+          subject_id: subject_id)
+        @user_subject.save
+        ktra = true
+        flash[:success] = "Successfully register ..."
+        redirect_to @user
+      end
+    end
+    return if ktra
+    flash[:danger] = "Error ... Check and Fill in again carefully"
+    render :register_subjects
+  end
+
   def new
     @user = User.new
   end

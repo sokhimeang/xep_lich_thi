@@ -9,7 +9,8 @@ class User < ApplicationRecord
       minimum: Settings.user.code.min_length},
     uniqueness: {case_sensitive: false}
   validates :name,  presence: true,
-    length: {maximum: Settings.user.name.length}
+    length: {maximum: Settings.user.name.max_length,
+      minimum: Settings.user.name.min_length}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true,
     length: {maximum: Settings.user.email.length},
