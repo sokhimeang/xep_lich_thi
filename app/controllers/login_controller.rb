@@ -1,6 +1,5 @@
 class LoginController < ApplicationController
-  def new
-  end
+  def new; end
 
   def create
     user = User.find_by code: params[:session][:code].upcase

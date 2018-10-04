@@ -5,6 +5,7 @@
     <%= submit_tag t("search"), name: nil, class: "mb-2 bg-primary" %>
   <% end %>
 </div>
+
 <% @users.each do |user| %>
   <div><%= user.code %>:
     <%= link_to user.name, user %>

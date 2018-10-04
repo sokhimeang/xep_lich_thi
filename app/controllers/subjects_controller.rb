@@ -32,13 +32,12 @@ class SubjectsController < ApplicationController
 
   def index
     @subjects = if params[:term]
-      Subject.where('code LIKE ? OR name LIKE ?',
-        "%#{params[:term]}%", "%#{params[:term]}%").paginate page: params[:page],
-        per_page: Settings.subject.per_page
-    else
-      @subjects = Subject.order_by_code.paginate page: params[:page],
-        per_page: Settings.subject.per_page
-    end
+                  Subject.search(params[:term]).paginate page: params[:page],
+                    per_page: Settings.subject.per_page
+                else
+                  @subjects = Subject.order_by_code.paginate page:
+                    params[:page], per_page: Settings.subject.per_page
+                end
   end
 
   def destroy

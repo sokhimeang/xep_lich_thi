@@ -3,14 +3,17 @@ class User < ApplicationRecord
   has_many :subjects, through: :user_subjects
   mount_uploader :image, ImageUploader
 
+  has_many :class_users
+  has_many :classs, through: :class_users
+
   before_save :email_downcase
   validates :code, presence: true,
     length: {maximum: Settings.user.code.max_length,
-      minimum: Settings.user.code.min_length},
+             minimum: Settings.user.code.min_length},
     uniqueness: {case_sensitive: false}
   validates :name,  presence: true,
     length: {maximum: Settings.user.name.max_length,
-      minimum: Settings.user.name.min_length}
+             minimum: Settings.user.name.min_length}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true,
     length: {maximum: Settings.user.email.length},
@@ -20,7 +23,9 @@ class User < ApplicationRecord
   validates :password, presence: true,
     length: {minimum: Settings.user.password.length}, allow_nil: true
 
-  scope :order_by_code, -> {order code: :asc}
+  scope :order_by_code, ->{order code: :asc}
+  scope :search,
+    ->(code){where("code LIKE ? OR name LIKE ?", "%#{code}%", "%#{code}%")}
 
   private
   def email_downcase

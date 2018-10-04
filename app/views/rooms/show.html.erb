@@ -1,0 +1,5 @@
+<%= @room.code %>
+| <%= @room.capacity %>
+| <%= link_to t("edit"), edit_room_path %>
+| <%= link_to t("delete"), @room, method: :delete,
+    data: {confirm: t("sure")} %>

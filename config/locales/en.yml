@@ -12,20 +12,24 @@ en:
   updated: "Updated success"
   search: "Search"
 
-  helpers:
-    label:
-      user:
+  rooms:
+    new:
+      new: "New classroom"
+    index:
+      code: "Code"
 
   layouts:
     header:
       english: "English"
       viet: "Vietnamese"
-      newuser: "Create new user"
+      newuser: "Create user"
       users: "All users"
-      newsubject: "Create new subject"
+      newsubject: "Create subject"
       subjects: "All subjects"
       addusersubject: "Register subject for student"
       register_subject: "Regitster subject"
+      newroom: "Create room"
+      rooms: "Rooms list"
 
   login:
     create:

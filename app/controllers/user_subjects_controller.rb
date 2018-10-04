@@ -7,10 +7,10 @@ class UserSubjectsController < ApplicationController
     @user_subject = UserSubject.new user_subject_params
     if @user_subject.save
       flash[:success] = "Success"
-      redirect_to "/user_subjects/new"
+      redirect_to new_user_subject_path
     else
       flash[:warning] = "Failed"
-      redirect_to "/user_subjects/new"
+      render :new
     end
   end
 

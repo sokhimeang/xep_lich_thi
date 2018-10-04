@@ -57,3 +57,11 @@ end
     end
   end
 end
+
+50.times do |n|
+  code = Faker::Code.nric
+  capacity = 15 + rand(145)
+  Room.create!(
+    code: code,
+    capacity: capacity)
+end

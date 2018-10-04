@@ -7,11 +7,15 @@ class Subject < ApplicationRecord
     uniqueness: {case_sensitive: false}
   validates :name, presence: true
   validates :exam_during, presence: true,
-    :inclusion => (Settings.subject.exam.min_during)..(Settings.subject.exam.max_during)
+    inclusion: (Settings.subject.exam.min_during)..
+      (Settings.subject.exam.max_during)
 
-  scope :order_by_code, -> {order code: :asc}
+  scope :order_by_code, ->{order code: :asc}
+  scope :search,
+    ->(code){where("code LIKE ? OR name LIKE ?", "%#{code}%", "%#{code}%")}
 
   private
+
   def code_upcase
     code.upcase!
   end

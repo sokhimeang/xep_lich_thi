@@ -28,6 +28,15 @@ vi:
       user_subject:
         user_id: "Id user (người dùng)"
         subject_id: "Id Học phần"
+      room:
+        code: "Mã phòng"
+        capacity: "Sức chứa"
+
+  rooms:
+    new:
+      new: "Tạo phòng mới"
+    index:
+      code: "Mã phòng"
 
   login:
     new:
@@ -39,12 +48,14 @@ vi:
     header:
       english: "Tiếng Anh"
       viet: "Tiếng Việt"
-      newuser: "Tạo user mới"
-      users: "Xem tất cả users"
-      newsubject: "Tạo học phần mới"
-      subjects: "Xem tất cả học phần"
+      newuser: "Tạo user"
+      users: "Xem các user"
+      newsubject: "Tạo học phần"
+      subjects: "Xem các học phần"
       addusersubject: "Đăng ký học phần cho sinh viên"
       register_subject: "Đăng ký học phần"
+      newroom: "Tạo phòng"
+      rooms: "Danh sách phòng"
 
   user_subjects:
     new:

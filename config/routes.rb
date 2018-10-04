@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'rooms/new'
+  get 'rooms/edit'
+  get 'rooms/index'
+  get 'rooms/show'
+  resources :rooms
+
   get "login", to: "login#new"
   post "login", to: "login#create"
   delete "logout", to: "login#destroy"
