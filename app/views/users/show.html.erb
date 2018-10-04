@@ -1,0 +1,10 @@
+<%= image_tag @user.image.thumb.url %>
+<br>
+<% @subjects.each do |subject| %>
+  <div>
+    <%= subject.id %>
+    | <%= subject.name %>
+    | <%= link_to t("delete"), user_subject_url, method: :delete,
+      data: { confirm: t("sure") } %>
+  </div>
+<% end %>

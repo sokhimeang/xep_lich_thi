@@ -1,0 +1,15 @@
+current directory: /home/vibang/Desktop/rorProjects/proj_3/vendor/bundle/gems/bindex-0.5.0/ext/bindex
+/home/vibang/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20181004-4250-stzygp.rb extconf.rb
+creating Makefile
+
+current directory: /home/vibang/Desktop/rorProjects/proj_3/vendor/bundle/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" clean
+
+current directory: /home/vibang/Desktop/rorProjects/proj_3/vendor/bundle/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR="
+compiling cruby.c
+linking shared-object bindex/cruby.so
+
+current directory: /home/vibang/Desktop/rorProjects/proj_3/vendor/bundle/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20181004-4250-ikge6/bindex

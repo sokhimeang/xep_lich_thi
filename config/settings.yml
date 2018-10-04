@@ -1,0 +1,28 @@
+user:
+  code:
+    min_length: 6
+    max_length: 10
+  name:
+    max_length: 36
+    min_length: 5
+  email:
+    length: 50
+  password:
+    length: 6
+  account:
+    per_page: 20
+
+subject:
+  per_page: 20
+  exam:
+    min_during: 45
+    max_during: 120
+
+room:
+  per_page: 15
+  code:
+    min_length: 6
+    max_length: 15
+  capacity:
+    min_num: 15
+    max_num: 160

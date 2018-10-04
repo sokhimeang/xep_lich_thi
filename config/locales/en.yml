@@ -1,0 +1,67 @@
+en:
+  base_title: "Exam Scheduling"
+  edit: "Edit"
+  delete: "Delete"
+  sure: "Are you sure to delete this?"
+  edit: "Edit"
+  save: "Save"
+  create: "Create new"
+  create_success: "Create success!"
+  create_failed: "Failed, check information again"
+  deleted: "Deleted success"
+  updated: "Updated success"
+  search: "Search"
+
+  rooms:
+    new:
+      new: "New classroom"
+    index:
+      code: "Code"
+
+  layouts:
+    header:
+      english: "English"
+      viet: "Vietnamese"
+      newuser: "Create user"
+      users: "All users"
+      newsubject: "Create subject"
+      subjects: "All subjects"
+      addusersubject: "Register subject for student"
+      register_subject: "Regitster subject"
+      newroom: "Create room"
+      rooms: "Rooms list"
+
+  login:
+    create:
+      success: "Logged in now, Welcome"
+      invalid: "Invalid username or password"
+    new:
+      login: "Log In"
+
+  user_subjects:
+    new:
+      register: "Register subject for student"
+      btnregister: "Register"
+
+  shared:
+    error_messages:
+      form: "Form contains "
+      error: " error(s)."
+
+  users:
+    register_subjects:
+      register: "Register subject"
+      subjectcode: "Subject code"
+    index:
+      users: "Users list"
+    edit:
+      edit: "Edit user"
+    form:
+      confirm: "Confirm password"
+    new:
+      signup: "Form Sign up"
+      create: "Create new user"
+
+  static_pages:
+    home:
+      welcome: "Welcome to this site: Exam Schedule"

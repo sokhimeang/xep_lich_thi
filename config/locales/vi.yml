@@ -1,0 +1,87 @@
+vi:
+  base_title: "Sắp xếp lịch thi"
+  edit: "Chỉnh sửa"
+  delete: "Xóa"
+  sure: "Bạn có chắc chắn muốn tiến hành xóa không?"
+  edit: "Chỉnh sửa"
+  save: "Lưu"
+  create: "Tạo mới"
+  create_success: "Tạo mới thành công"
+  create_failed: "Failed, xem lại thông tin"
+  deleted: "Xóa thành công"
+  updated: "Đã cập nhật"
+  search: "Tìm kiếm"
+
+  helpers:
+    label:
+      user:
+        code: "Mã số user"
+        name: "Họ Tên"
+        email: "Email"
+        pasword: "Mật khẩu"
+        password_confirmation: "Xác nhận mật khẩu"
+        avatar: "Ảnh đại diện"
+      subject:
+        code: "Mã học phần"
+        name: "Tên học phần"
+        exam_during: "Thời lượng thi"
+      user_subject:
+        user_id: "Id user (người dùng)"
+        subject_id: "Id Học phần"
+      room:
+        code: "Mã phòng"
+        capacity: "Sức chứa"
+
+  rooms:
+    new:
+      new: "Tạo phòng mới"
+    index:
+      code: "Mã phòng"
+
+  login:
+    new:
+      success: "Đã đăng nhập, chào mừng bạn"
+      invalid: "Username hoặc mật khẩu không đúng"
+      login: "Đăng nhập"
+
+  layouts:
+    header:
+      english: "Tiếng Anh"
+      viet: "Tiếng Việt"
+      newuser: "Tạo user"
+      users: "Xem các user"
+      newsubject: "Tạo học phần"
+      subjects: "Xem các học phần"
+      addusersubject: "Đăng ký học phần cho sinh viên"
+      register_subject: "Đăng ký học phần"
+      newroom: "Tạo phòng"
+      rooms: "Danh sách phòng"
+
+  user_subjects:
+    new:
+      register: "Đăng ký học phần cho sinh viên"
+      btnregister: "Đăng ký học phần"
+      subjectcode: "Mã học phần"
+
+  shared:
+    error_messages:
+      form: "Form có "
+      error: " lỗi."
+
+  users:
+    register_subjects:
+      register: "Đăng ký học phần"
+      subjectcode: "Mã học phần"
+    index:
+      users: "Danh sách người dùng"
+    edit:
+      edit: "Chỉnh sửa user"
+    form:
+      confirm: "Xác nhận password"
+    new:
+      signup: "Form tạo user mới"
+      create: "Tạo user mới"
+
+  static_pages:
+    home:
+      welcome: "Xin chào các bạn"
