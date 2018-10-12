@@ -24,6 +24,11 @@ Rails.application.routes.draw do
   get "users/index"
   get "register_subject", to: "users#register_subjects"
   post "register_subject", to: "users#do_register_subjects"
+  get "register_room", to: "users#register_room"
+  post "register_room", to: "users#do_register_room"
+  delete "/room_users/:id", to: "room_users#destroy"
+  resources :room_users
+
   root "static_pages#home"
   get "contact", to: "static_pages#contact"
   scope "(:locale)", locale: /en|vi/ do

@@ -1,6 +1,6 @@
 class Room < ApplicationRecord
-  has_many :class_users
-  has_many :users, through: :class_users
+  has_many :room_users
+  has_many :users, through: :room_users
 
   validates :code, presence: true,
     length: {maximum: Settings.room.code.max_length,

@@ -12,12 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2018_10_03_163332) do
 
-  create_table "class_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "room_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "class_id"
+    t.integer "room_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id", "class_id"], name: "index_class_users_on_user_id_and_class_id", unique: true
+    t.index ["user_id", "room_id"], name: "index_room_users_on_user_id_and_room_id", unique: true
   end
 
   create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

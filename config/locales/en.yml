@@ -11,12 +11,17 @@ en:
   deleted: "Deleted success"
   updated: "Updated success"
   search: "Search"
+  register: "Register"
+  cantdelete: "Cannot delete"
 
   rooms:
     new:
       new: "New classroom"
     index:
       code: "Code"
+    show:
+      list: "Student Lists: Code & Name"
+      show: "Students list"
 
   layouts:
     header:
@@ -30,6 +35,7 @@ en:
       register_subject: "Regitster subject"
       newroom: "Create room"
       rooms: "Rooms list"
+      log_in: "Log in"
 
   login:
     create:
@@ -49,6 +55,8 @@ en:
       error: " error(s)."
 
   users:
+    register_room:
+      roomcode: "Room code"
     register_subjects:
       register: "Register subject"
       subjectcode: "Subject code"
@@ -61,7 +69,12 @@ en:
     new:
       signup: "Form Sign up"
       create: "Create new user"
+    show:
+      show: "Classrooms list"
 
   static_pages:
     home:
       welcome: "Welcome to this site: Exam Schedule"
+      site: "Exam Scheduling Site"
+      advantage: "Advantage for all students and supervisor."
+      info: "Our Info Here"

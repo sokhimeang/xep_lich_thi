@@ -38,7 +38,10 @@ class RoomsController < ApplicationController
              end
   end
 
-  def show; end
+  def show
+    @users = @room.users
+    @room_users = @room.room_users
+  end
 
   def destroy
     @room.destroy

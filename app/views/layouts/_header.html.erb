@@ -17,7 +17,7 @@
     <ul class="nav justify-content-end">
       <% unless logged_in? %>
         <li class="nav-item">
-          <%= link_to t(".login"), login_path, class: "nav-link bg-dark text-white" %>
+          <%= link_to t(".log_in"), login_path, class: "nav-link bg-dark text-white" %>
         </li>
       <% else %>
         <li class="nav-item dropdown">
@@ -40,10 +40,10 @@
 <br>
 <%= link_to t(".newuser"), new_user_path %>
 | <%= link_to t(".users"), users_path %>
-| <%= link_to t(".newsubject"), new_subject_path %>
+<!-- | <%= link_to t(".newsubject"), new_subject_path %>
 | <%= link_to t(".subjects"), subjects_path %>
 | <%= link_to t(".addusersubject"), new_user_subject_path %>
 | <%= link_to t(".register_subject"), register_subject_path %>
-<br>
+<br> -->
 | <%= link_to t(".newroom"), new_room_path %>
 | <%= link_to t(".rooms"), rooms_path %>

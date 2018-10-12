@@ -7,7 +7,8 @@
 
 <% @rooms.each do |room| %>
   <div>
-    <%= "#{t(".code")}: #{room.code}" %>
+    <%= t ".code" %>:
+    <%= link_to room.code, room %>
     | <%= room.capacity %>
     | <%= link_to t("edit"), "/rooms/#{room.id}/edit" %>
     | <%= link_to t("delete"), room, method: :delete,

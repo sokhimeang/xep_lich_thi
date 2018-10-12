@@ -24,6 +24,29 @@ class UsersController < ApplicationController
     render :register_subjects
   end
 
+  def register_room; end
+
+  def do_register_room
+    @user = User.find_by id: 1
+    @rooms = Room.all
+    ktra = false
+
+    @rooms.each do |room|
+      if (room.code == params[:term])
+        @room_user = RoomUser.new(room_id: room.id,
+          user_id: @user.id)
+        @room_user.save
+        ktra = true
+        flash[:success] = "Successfully register ..."
+        redirect_to @user
+      end
+    end
+    unless ktra
+      flash[:danger] = "Error ... Check and Fill in again carefully"
+      render :register_room
+    end
+  end
+
   def new
     @user = User.new
   end
@@ -52,7 +75,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @subjects = @user.subjects
+    # @subjects = @user.subjects
+    @rooms = @user.rooms
+    @room_users = @user.room_users
   end
 
   def index

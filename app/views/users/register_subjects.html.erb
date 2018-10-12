@@ -1,6 +1,7 @@
 <% provide :title, t(".register") %>
 <%= form_tag url_for(controller: "users", action: "register_subjects"),
   method: "post" do %>
-  <%= text_field_tag :term, params[:term], placeholder: t(".subjectcode"), class: "col-md-7 mb-2" %>
+  <%= text_field_tag :term, params[:term], placeholder: t(".subjectcode"),
+    class: "col-md-7 mb-2" %>
   <%= submit_tag t(".register"), name: nil, class: "mb-2 bg-primary" %>
 <% end %>

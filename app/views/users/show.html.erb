@@ -1,10 +1,26 @@
+<% provide :title, t(".show") %>
 <%= image_tag @user.image.thumb.url %>
-<br>
-<% @subjects.each do |subject| %>
+<!-- <br>
+<h1>Subject</h1>
+<%# @subjects.each do |subject| %>
   <div>
-    <%= subject.id %>
-    | <%= subject.name %>
-    | <%= link_to t("delete"), user_subject_url, method: :delete,
+    <%#= subject.id %>
+    | <%#= subject.name %>
+    | <%#= link_to t("delete"), user_subject_url, method: :delete,
       data: { confirm: t("sure") } %>
+  </div>
+<%# end %> -->
+<br>
+<h1>ClassRoom</h1>
+<% @rooms.each do |room| %>
+  <div>
+    <%= room.id %>
+    | <%= room.code %>
+    <% @room_users.each do |ru| %>
+      <% if (ru.room_id == room.id)%>
+        | <%= link_to t("delete"), "/room_users/#{ru.id}", method: :delete,
+          data: { confirm: t("sure") } %>
+      <% end %>
+    <% end %>
   </div>
 <% end %>

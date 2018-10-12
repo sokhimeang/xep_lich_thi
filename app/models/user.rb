@@ -3,8 +3,8 @@ class User < ApplicationRecord
   has_many :subjects, through: :user_subjects
   mount_uploader :image, ImageUploader
 
-  has_many :class_users
-  has_many :classs, through: :class_users
+  has_many :room_users
+  has_many :rooms, through: :room_users
 
   before_save :email_downcase
   validates :code, presence: true,

@@ -11,6 +11,8 @@ vi:
   deleted: "Xóa thành công"
   updated: "Đã cập nhật"
   search: "Tìm kiếm"
+  register: "Đăng ký"
+  cantdelete: "Không thể xóa được"
 
   helpers:
     label:
@@ -37,15 +39,22 @@ vi:
       new: "Tạo phòng mới"
     index:
       code: "Mã phòng"
+    show:
+      list: "Danh sách sinh viên: Mã & Họ tên"
+      show: "Danh sách sinh viên"
 
   login:
-    new:
+    create:
       success: "Đã đăng nhập, chào mừng bạn"
       invalid: "Username hoặc mật khẩu không đúng"
+    new:
       login: "Đăng nhập"
 
   layouts:
     header:
+      home: "Trang chủ"
+      help: "Hỗ trợ"
+      contact: "Liên hệ"
       english: "Tiếng Anh"
       viet: "Tiếng Việt"
       newuser: "Tạo user"
@@ -55,7 +64,8 @@ vi:
       addusersubject: "Đăng ký học phần cho sinh viên"
       register_subject: "Đăng ký học phần"
       newroom: "Tạo phòng"
-      rooms: "Danh sách phòng"
+      rooms: "Xem các phòng"
+      log_in: "Đăng nhập"
 
   user_subjects:
     new:
@@ -69,6 +79,8 @@ vi:
       error: " lỗi."
 
   users:
+    register_room:
+      roomcode: "Mã phòng"
     register_subjects:
       register: "Đăng ký học phần"
       subjectcode: "Mã học phần"
@@ -81,7 +93,12 @@ vi:
     new:
       signup: "Form tạo user mới"
       create: "Tạo user mới"
+    show:
+      show: "Xem lớp học"
 
   static_pages:
     home:
-      welcome: "Xin chào các bạn"
+      welcome: "Chào mừng các bạn đã đến trang web này"
+      site: "Web Xếp Lịch Thi"
+      advantage: "Tiện lợi cho các sinh viên và giám thị."
+      info: "Thông tin liên hệ"
