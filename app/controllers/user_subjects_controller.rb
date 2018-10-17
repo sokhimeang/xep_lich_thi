@@ -1,4 +1,7 @@
 class UserSubjectsController < ApplicationController
+  before_action :login_require, only: %i(new create destroy)
+  before_action :admin_require, only: %i(new create destroy)
+
   def new
     @user_subject = UserSubject.new
   end
@@ -6,10 +9,10 @@ class UserSubjectsController < ApplicationController
   def create
     @user_subject = UserSubject.new user_subject_params
     if @user_subject.save
-      flash[:success] = "Success"
+      flash.now[:success] = "Success"
       redirect_to new_user_subject_path
     else
-      flash[:warning] = "Failed"
+      flash.now[:warning] = "Failed"
       render :new
     end
   end
@@ -17,7 +20,7 @@ class UserSubjectsController < ApplicationController
   def destroy
     @user_subject = UserSubject.find_by id: params[:id]
     @user_subject.destroy
-    flash[:success] = t "deleted"
+    flash.now[:success] = t "deleted"
     redirect_to root_path
   end
 

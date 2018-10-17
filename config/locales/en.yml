@@ -13,6 +13,10 @@ en:
   search: "Search"
   register: "Register"
   cantdelete: "Cannot delete"
+  login_require: "Log in first please"
+  admin_require: "Can't access ... You are not admin"
+  copyright: "\xA9 \xAE Create by Sokhy Eang"
+  log: "Log in"
 
   rooms:
     new:
@@ -22,6 +26,11 @@ en:
     show:
       list: "Student Lists: Code & Name"
       show: "Students list"
+
+  room_users:
+    new:
+      register: "Register classroom"
+      btnregister: "Register"
 
   layouts:
     header:
@@ -36,6 +45,7 @@ en:
       newroom: "Create room"
       rooms: "Rooms list"
       log_in: "Log in"
+      register_room: "Register classroom"
 
   login:
     create:
@@ -57,6 +67,8 @@ en:
   users:
     register_room:
       roomcode: "Room code"
+    do_register_room:
+      registered_subject: "Check again, maybe you had another class with the same subject"
     register_subjects:
       register: "Register subject"
       subjectcode: "Subject code"
@@ -74,7 +86,9 @@ en:
 
   static_pages:
     home:
+      quote: "Good Luck for your exam and do the best"
       welcome: "Welcome to this site: Exam Schedule"
       site: "Exam Scheduling Site"
       advantage: "Advantage for all students and supervisor."
       info: "Our Info Here"
+      description: "Relax, everything is ok. Try your best!"

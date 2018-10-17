@@ -1,9 +1,10 @@
 <% provide :title, t(".show") %>
 <h1><%= t ".show" %></h1>
 <%= @room.code %>
-| <%= @room.capacity %>
+| max: <%= @room.capacity %>
+| <%= @room.subject_id %>: <%= Subject.find(@room.subject_id).code %>
 <br>
-<h2><%= t (".list") %></h2>
+<h2>(<%= @users.count %>) <%= t (".list") %></h2>
 <br>
 <% @users.each do |user| %>
   <%= user.code %>
@@ -14,5 +15,5 @@
           data: {confirm: t("sure")} %>
       <% end %>
   <% end %>
-  <br>
+  <hr align="left" width="400px">
 <% end %>

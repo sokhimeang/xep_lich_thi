@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :room_users
   has_many :rooms, through: :room_users
 
-  before_save :email_downcase
+  before_save :email_downcase, :code_upcase
   validates :code, presence: true,
     length: {maximum: Settings.user.code.max_length,
              minimum: Settings.user.code.min_length},
@@ -28,7 +28,12 @@ class User < ApplicationRecord
     ->(code){where("code LIKE ? OR name LIKE ?", "%#{code}%", "%#{code}%")}
 
   private
+
   def email_downcase
     email.downcase!
+  end
+
+  def code_upcase
+    code.upcase!
   end
 end

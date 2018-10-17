@@ -1,11 +1,12 @@
+
 <div class="row">
-  <div class="col-md-8 mb-2 round-mn">
+  <%= link_to root_path do %>
+     <%= image_tag "logo.jpeg", class: "logoImg" %>
+  <% end %>
+  <div class="col mb-2 round-mn">
     <ul class="nav">
       <li class="nav-item my-bg">
         <%= link_to t(".home"), root_url, class: "nav-link my-li" %>
-      </li>
-      <li class="nav-item my-bg">
-        <%= link_to t(".help"), "#", class: "nav-link my-li" %>
       </li>
       <li class="nav-item my-bg">
         <%= link_to t(".contact"), contact_url, class: "nav-link my-li" %>
@@ -13,7 +14,7 @@
     </ul>
   </div>
 
-  <div class="col-md-4 mb-2">
+  <div class="col mb-2 m-account">
     <ul class="nav justify-content-end">
       <% unless logged_in? %>
         <li class="nav-item">
@@ -24,8 +25,8 @@
           <%=  link_to t(".account"), "#", class: "nav-link dropdown-toggle
           bg-primary text-white", data: { toggle: "dropdown"} %>
           <div class="dropdown-menu dropdown-menu-right bg-success">
-            <%= link_to t(".profile"), "#", class: "dropdown-item bg-success" %>
-            <%= link_to t(".settings"), "#", class: "dropdown-item bg-success" %>
+            <%= link_to t(".profile"), current_user, class: "dropdown-item bg-success" %>
+            <%= link_to t(".settings"), edit_user_path(current_user), class: "dropdown-item bg-success" %>
             <div class="dropdown-divider"></div>
             <%= link_to t(".logout"), logout_path, method: :delete, class: "dropdown-item bg-warning text-dark" %>
           </div>
@@ -35,15 +36,32 @@
   </div>
 </div>
 
-<%= link_to t(".english"), locale: "en" %>
-| <%= link_to t(".viet"), locale: "vi" %>
-<br>
-<%= link_to t(".newuser"), new_user_path %>
-| <%= link_to t(".users"), users_path %>
-<!-- | <%= link_to t(".newsubject"), new_subject_path %>
+<%= link_to t(".users"), users_path %>
 | <%= link_to t(".subjects"), subjects_path %>
-| <%= link_to t(".addusersubject"), new_user_subject_path %>
-| <%= link_to t(".register_subject"), register_subject_path %>
-<br> -->
-| <%= link_to t(".newroom"), new_room_path %>
 | <%= link_to t(".rooms"), rooms_path %>
+<!-- | <%= link_to t(".addusersubject"), new_user_subject_path %>
+| <%= link_to t(".register_subject"), register_subject_path %> -->
+<div class="lang">
+  <%= link_to t(".english"), locale: "en" %>
+  | <%= link_to t(".viet"), locale: "vi" %>
+</div>
+<% if logged_in? %>
+  <br>
+  <% if admin? %>
+    <%= link_to t(".newuser"), new_user_path %>
+    | <%= link_to t(".newsubject"), new_subject_path %>
+    | <%= link_to t(".newroom"), new_room_path %>
+    <br>
+    <%= link_to "Register for student", m_room_users_path %>
+  <% else %>
+    <%= link_to t(".register_room"), register_room_path %>
+  <% end %>
+<% end %>
+
+<br>
+<% if "#{request.path}" != "/" %>
+  <div class="my-logo">
+    <%= image_tag "examLogo", class: "logo" %>
+    <%= image_tag "examLogo", class: "logo" %>
+  </div>
+<% end %>

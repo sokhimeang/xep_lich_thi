@@ -6,7 +6,7 @@
 <% @subjects.each do |subject| %>
   <div>
     <%= subject.code %>
-    | <%= subject.name %>
+    | <%= link_to subject.name, subject %>
     | <%= subject.exam_during %>
     | <%= link_to t("edit"), "/subjects/#{subject.id}/edit" %>
     | <%= link_to t("delete"), subject, method: :delete,

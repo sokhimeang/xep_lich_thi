@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   delete "logout", to: "login#destroy"
 
   get "user_subjects/new"
-  resources :user_subjects
+
+  get "m_room_users", to: "room_users#new"
+  post "m_room_users", to: "room_users#create"
 
   get "subjects/new"
   get "subjects/edit"
@@ -28,16 +30,12 @@ Rails.application.routes.draw do
   post "register_room", to: "users#do_register_room"
   delete "/room_users/:id", to: "room_users#destroy"
   resources :room_users
+  resources :user_subjects
 
   root "static_pages#home"
   get "contact", to: "static_pages#contact"
   scope "(:locale)", locale: /en|vi/ do
     root "static_pages#home"
-  end
-  resources :users do
-    collection do
-      get :register_subjects, as: :register_subjects
-    end
   end
   resources :users
 end
