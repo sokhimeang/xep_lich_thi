@@ -1,4 +1,6 @@
 class LoginController < ApplicationController
+  before_action :skip, only: %i(new create)
+
   def new; end
 
   def create
@@ -6,10 +8,10 @@ class LoginController < ApplicationController
 
     if user&.authenticate(params[:session][:password])
       log_in user
-      flash[:info] = t ".success"
-      redirect_to "/users/#{user.id}"
+      flash.now[:info] = t ".success"
+      redirect_back_or user
     else
-      flash[:danger] = t ".invalid"
+      flash.now[:danger] = t ".invalid"
       render :new
     end
   end
@@ -17,5 +19,13 @@ class LoginController < ApplicationController
   def destroy
     log_out if logged_in?
     redirect_to root_url
+  end
+
+  private
+
+  def skip
+    return unless logged_in?
+    flash.now[:warning] = "You already logged in."
+    redirect_to root_path
   end
 end

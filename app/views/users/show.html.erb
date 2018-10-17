@@ -1,5 +1,7 @@
 <% provide :title, t(".show") %>
 <%= image_tag @user.image.thumb.url %>
+<%= @user.code %>
+| <%= @user.name %>
 <!-- <br>
 <h1>Subject</h1>
 <%# @subjects.each do |subject| %>
@@ -11,11 +13,13 @@
   </div>
 <%# end %> -->
 <br>
-<h1>ClassRoom</h1>
+<h1><%= @rooms.count %> classroom(s)</h1>
 <% @rooms.each do |room| %>
   <div>
-    <%= room.id %>
+    Classroom: <%= room.id %> (subject: <%= room.subject_id %>)
     | <%= room.code %>
+    | <%= room.capacity %>
+    <br>&emsp;Subject: <%= room.subject.name %>
     <% @room_users.each do |ru| %>
       <% if (ru.room_id == room.id)%>
         | <%= link_to t("delete"), "/room_users/#{ru.id}", method: :delete,
@@ -23,4 +27,5 @@
       <% end %>
     <% end %>
   </div>
+  <hr align="left" width="400px">
 <% end %>

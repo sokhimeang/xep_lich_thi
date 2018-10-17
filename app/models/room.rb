@@ -1,7 +1,9 @@
 class Room < ApplicationRecord
+  belongs_to :subject
   has_many :room_users
   has_many :users, through: :room_users
 
+  validates :subject, presence: true
   validates :code, presence: true,
     length: {maximum: Settings.room.code.max_length,
              minimum: Settings.room.code.min_length},

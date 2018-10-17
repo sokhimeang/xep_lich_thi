@@ -1,4 +1,5 @@
 class Subject < ApplicationRecord
+  has_many :rooms
   has_many :user_subjects
   has_many :users, through: :user_subjects
 

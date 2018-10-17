@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_03_163332) do
+ActiveRecord::Schema.define(version: 2018_10_14_084523) do
 
   create_table "room_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
@@ -25,7 +25,9 @@ ActiveRecord::Schema.define(version: 2018_10_03_163332) do
     t.integer "capacity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "subject_id"
     t.index ["code"], name: "index_rooms_on_code", unique: true
+    t.index ["subject_id"], name: "index_rooms_on_subject_id"
   end
 
   create_table "subjects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -53,8 +55,10 @@ ActiveRecord::Schema.define(version: 2018_10_03_163332) do
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "position_id", default: 2
     t.index ["code"], name: "index_users_on_code", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "rooms", "subjects"
 end

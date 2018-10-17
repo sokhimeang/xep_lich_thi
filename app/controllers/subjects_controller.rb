@@ -1,5 +1,7 @@
 class SubjectsController < ApplicationController
   before_action :find_subject, only: %i(edit update show destroy)
+  before_action :login_require, only: %i(new create edit update destroy)
+  before_action :admin_require, only: %i(new create edit update destroy)
 
   def new
     @subject = Subject.new
@@ -9,10 +11,10 @@ class SubjectsController < ApplicationController
     @subject = Subject.new subject_params
 
     if @subject.save
-      flash[:success] = t "create_success"
+      flash.now[:success] = t "create_success"
       redirect_to @subject
     else
-      flash[:danger] = t "create_failed"
+      flash.now[:danger] = t "create_failed"
       render :new
     end
   end
@@ -21,14 +23,16 @@ class SubjectsController < ApplicationController
 
   def update
     if @subject.update subject_params
-      flash[:success] = t "updated"
-      redirect_to subjects_path
+      flash.now[:success] = t "updated"
+      redirect_to @subject
     else
       render :edit
     end
   end
 
-  def show; end
+  def show
+    @rooms = @subject.rooms
+  end
 
   def index
     @subjects = if params[:term]
@@ -42,7 +46,7 @@ class SubjectsController < ApplicationController
 
   def destroy
     @subject.destroy
-    flash[:success] = t "deleted"
+    flash.now[:success] = t "deleted"
     redirect_to subjects_url
   end
 

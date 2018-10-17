@@ -1,0 +1,10 @@
+<% provide :title, t(".register") %>
+
+<%= form_tag url_for(controller: "room_users", action: "new"),
+  method: "post" do %>
+  <%= text_field_tag :user_code, params[:user_code], placeholder: "User code",
+    class: "col-md-7 mb-2" %>
+  <%= text_field_tag :room_code, params[:room_code], placeholder: "Room code",
+    class: "col-md-7 mb-2" %>
+  <br><%= submit_tag t(".btnregister"), name: nil, class: "mb-2 bg-primary" %>
+<% end %>

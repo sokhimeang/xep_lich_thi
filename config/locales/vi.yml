@@ -13,6 +13,58 @@ vi:
   search: "Tìm kiếm"
   register: "Đăng ký"
   cantdelete: "Không thể xóa được"
+  login_require: "Xin mời đăng nhập trước"
+  admin_require: "Không truy cập được, Bạn không phải là Admin"
+  copyright: "\xA9 \xAE Create by Sokhy Eang"
+  log: "Đăng nhập"
+
+  activerecord:
+    errors:
+      models:
+        room:
+          attributes:
+            code:
+              taken: ": Mã phòng đã có rồi"
+              too_short: ": Mã phòng quá ngắn"
+              too_long: ": Mã phòng quá dài"
+              blank: ": Mã không được để trống"
+            capacity:
+              inclusion: ": Sức chưa quá nhỏ hoặc quá lớn"
+              blank: ": Sức chưa không được để trống"
+            subject:
+              required: ": Phải có học phần để thêm lớp được"
+              blank: ": Học phần không tồn tại"
+        subject:
+          attributes:
+            code:
+              taken: ": Mã học phần đã có rồi"
+              too_short: ": Mã học phần quá ngắn"
+              too_long: ": Mã học phần quá dài"
+              blank: ": Mã học phần không được để trống"
+            name:
+              blank: ": Tên môn học không được để trống"
+            exam_during:
+              inclusion: ": Thời lượng thi quá nhỏ hoặc quá lớn"
+              blank: ": Học phần không tồn tại"
+        user:
+          attributes:
+            code:
+              taken: ": Mã đã có rồi"
+              too_short: ": Mã quá ngắn"
+              too_long: ": Mã quá dài"
+              blank: ": Mã không được để trống"
+            name:
+              too_short: ": Tên quá ngắn"
+              too_long: ": Tên quá dài"
+              blank: ": Tên không được để trống"
+            email:
+              blank: ": Email không được để trống"
+              too_long: ": Email quá dài"
+              invalid: "Email không đúng dạng, ví dụ: thiếu '@', '.'"
+              taken: ": Email đã có rồi"
+            password:
+              blank: ": Mật khẩu không được để trống"
+              too_short: ": Mật khẩu quá ngắn"
 
   helpers:
     label:
@@ -43,6 +95,11 @@ vi:
       list: "Danh sách sinh viên: Mã & Họ tên"
       show: "Danh sách sinh viên"
 
+  room_users:
+    new:
+      register: "Đăng ký lớp"
+      btnregister: "Đăng ký"
+
   login:
     create:
       success: "Đã đăng nhập, chào mừng bạn"
@@ -66,6 +123,7 @@ vi:
       newroom: "Tạo phòng"
       rooms: "Xem các phòng"
       log_in: "Đăng nhập"
+      register_room: "Đăng ký lớp học"
 
   user_subjects:
     new:
@@ -81,6 +139,8 @@ vi:
   users:
     register_room:
       roomcode: "Mã phòng"
+    do_register_room:
+      registered_subject: "Check again, maybe you had another class with the same subject"
     register_subjects:
       register: "Đăng ký học phần"
       subjectcode: "Mã học phần"
@@ -98,6 +158,7 @@ vi:
 
   static_pages:
     home:
+      quote: "Good Luck for your exam and do the best"
       welcome: "Chào mừng các bạn đã đến trang web này"
       site: "Web Xếp Lịch Thi"
       advantage: "Tiện lợi cho các sinh viên và giám thị."
